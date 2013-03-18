@@ -10,6 +10,8 @@
 #import sys
 #sys.path.append("..")
 
+from tkinter import *
+
 class DrawSignal():
     w = 600
     h = 400

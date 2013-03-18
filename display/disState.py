@@ -6,20 +6,22 @@
     note : show the sate of the application
 '''
 
-class disState():
+from tkinter import *
+
+class DisState():
     W = 50
     H = 50
     R = 40
     ID = []
     def __init__(self,master):
-        self.cav = Canvas(master,width = W,height = H)
+        self.cav = Canvas(master,width = self.W,height = self.H)
         self.cav.pack()
         self.setState("stop")
 
     def setState(self,s):
-        if ID[0]:
-            self.cav.delete(ID[0])
+        for i in self.ID:
+            self.cav.delete(i)
         if s == "start":
-            ID.append(self.cav.create_oval(0,0,self.W,self.H,outline='black', fill='green'))
+            self.ID.append(self.cav.create_oval(10,10,self.W-10,self.H-10,outline='black', fill='green'))
         else:
-            ID.append(self.cav.create_oval(0,0,self.W,self.H,outline='black', fill='red'))
+            self.ID.append(self.cav.create_oval(10,10,self.W-10,self.H-10,outline='black', fill='red'))
